@@ -24,7 +24,8 @@
     <body>
         <div class="main">
             <div class="container a-container" id="a-container">
-                <form class="form" id="a-form" method="" action="">
+                <form class="form" id="a-form" method="POST" action="">
+                    @csrf
                     <h2 class="form_title title">Crear Cuenta</h2>
                     <div class="form__icons">
                         <ul class="wrapper">
@@ -44,14 +45,23 @@
                         </ul>
                     </div>
                     <span class="form__span">Usa tu correo electrónico para registrarte</span>
-                    <input class="form__input" type="text" placeholder="Name">
-                    <input class="form__input" type="text" placeholder="Email">
-                    <input class="form__input" type="password" placeholder="Password">
-                    <button class="form__button button submit">REGISTRARSE</button>
+
+                    <input class="form__input" type="text" placeholder="Name" id="name" name="name">
+
+
+                    <input class="form__input" type="text" placeholder="Email" id="email" name="email">
+
+                    
+                    <input class="form__input" type="password" placeholder="Password" id="password" name="password">
+ 
+
+                    <input class="form__input" type="password" placeholder="Password_confirmacion" name="password_confirmacion">
+                    <button class="form__button button submit, text">REGISTRARSE</button>
                 </form>
             </div>
             <div class="container b-container" id="b-container">
-                <form class="form" id="b-form" method="" action="">
+                <form class="form" id="b-form" method="POST" action="">
+                    @csrf
                     <h2 class="form_title title">Iniciar sesión</h2>
                     <div class="form__icons">
                         <ul class="wrapper">
@@ -70,10 +80,13 @@
 
                         </ul>
                     </div><span class="form__span">o usa tu cuenta de correo</span>
-                    <input class="form__input" type="text" placeholder="Email">
-                    <input class="form__input" type="password" placeholder="Password"><a
-                        class="form__link">¿Olvidaste tu contraseña?</a>
-                    <button class="form__button button submit">INICIAR SESIÓN</button>
+                    <input class="form__input" type="text" placeholder="Email" id="email" name="email">
+                    <input class="form__input" type="password" placeholder="Password" id="password" name="password">
+                    @error('message')
+                    <p class="switch__description description">{{$message}}</p>
+                    @enderror
+                    <a class="form__link" href="">¿Olvidaste tu contraseña?</a>
+                    <button class="form__button button submit, text">INICIAR SESIÓN</button>
                 </form>
             </div>
             <div class="switch" id="switch-cnt">

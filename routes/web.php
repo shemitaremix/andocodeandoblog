@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\loginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +15,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('inicio');
+})->middleware('auth');
 
 
 // Ruta: usuarios "Iniciar sesion y registrarse"
-Route::get('/login', function () {
-    return view('usuarios.login');
-});
+
+//registrarse
+Route::get('/login', [loginController::class, 'login'])->middleware('guest')->name('login.index');
+Route::post('/login', [loginController::class, 'store'])->name('login.store');//recibe los datos del formulario de login
+
+//inicio de sesion
+Route::post('/login', [loginController::class, 'storeinicio'])->middleware('guest')->name('login.storeinicio');//ruta de inicio de sesion del usuario
+
+//cierre de sesion del usuario
+Route::get('/salir', [loginController::class, 'salir'])->middleware('auth')->name('login.salir');//ruta de cierre de sesion del usuario
