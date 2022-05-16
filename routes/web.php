@@ -19,7 +19,10 @@ Route::get('/', function () {
 })->middleware('auth');
 
 
-// Ruta: usuarios "Iniciar sesion y registrarse"
+// Index
+Route::get('/inicio', function() {
+    return view('usuarios.index');
+})->name('index');
 
 //registrarse
 Route::get('/login', [loginController::class, 'login'])->middleware('guest')->name('login.index');
