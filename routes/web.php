@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\loginController;
+use App\Http\Controllers\UsuarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +34,8 @@ Route::post('/login', [loginController::class, 'storeinicio'])->middleware('gues
 
 //cierre de sesion del usuario
 Route::get('/salir', [loginController::class, 'salir'])->middleware('auth')->name('login.salir');//ruta de cierre de sesion del usuario
+
+/**
+ * Ruta para enviar enlace de verificacion de correo
+ */
+Route::get('/verificarUsuario', [UsuarioController::class, 'verificarUsuario'])->name('verificar.usuario');
