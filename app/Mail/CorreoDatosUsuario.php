@@ -12,15 +12,15 @@ class CorreoDatosUsuario extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $user;
+    
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(User $User)
+    public function __construct( $user)
     {
-        $this->User = $User;
+       $this->user = $user;
     }
     
 
@@ -31,8 +31,7 @@ class CorreoDatosUsuario extends Mailable
      */
     public function build()
     {
-        return $this->view('view.mail.CorreoDatosUsuario');
-        $User = User::pluck('rodriguezisrael1406@gmail.com');
-        Mail::to($User)->send(new CorreoDatosUsuario($call));
+        return $this->view('mail.CorreoDatosUsuario',['user' => $this->user])->subject('Datos de usuario');
+        
     }
 }

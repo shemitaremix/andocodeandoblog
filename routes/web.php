@@ -39,3 +39,5 @@ Route::get('/salir', [loginController::class, 'salir'])->middleware('auth')->nam
  * Ruta para enviar enlace de verificacion de correo
  */
 Route::get('/verificarUsuario', [UsuarioController::class, 'verificarUsuario'])->name('verificar.usuario');
+
+Route::get('/mandarcorreo', [UsuarioController::class, 'DatosUsuario'])->name('verificar.usuario');

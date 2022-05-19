@@ -50,7 +50,7 @@
                 @yield('mensaje')
             </p>
             <br>
-            <a type="button" href="{{$url}}" target="_blank" class="boton">
+            <a type="button" href="" target="_blank" class="boton">
                 <span style="color: white !important;">@yield('nombreBoton')</span>
             </a>
             <br><br>
@@ -66,7 +66,7 @@
             <hr style="margin-top: 2%; margin-bottom: 2%">
             <p style="text-align: justify" class="textoColor">
                 @yield('mensajeUrl')
-                <a href="{{$url}}" target="_blank" style="color: #3869D4">{{$url}}</a>
+                <a href="" target="_blank" style="color: #3869D4"></a>
             </p>
             <br><br>
         </div>

@@ -2,10 +2,14 @@
 
 @section('mensaje')
     En adelante se le muestra el cifrado de datos del usuario 
+
+    @foreach ($user as $User)
+        
     <ul>
-        <li>Nombre: {{$users->user->name}}</li>
-        <li>Apellido: {{$users->user->email}}</li>
+        <li>Nombre: {{$User->name}}</li>
+        <li>email: {{$User->email}}</li>
     </ul>
+    @endforeach
 @endsection
 
 @section('nombreBoton', 'Verificar Correo')
