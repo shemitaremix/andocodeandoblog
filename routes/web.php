@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\loginController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\UsuarioController;
 
 /*
@@ -41,3 +42,9 @@ Route::get('/salir', [loginController::class, 'salir'])->middleware('auth')->nam
 Route::get('/verificarUsuario', [UsuarioController::class, 'verificarUsuario'])->name('verificar.usuario');
 
 Route::get('/mandarcorreo', [UsuarioController::class, 'DatosUsuario'])->name('verificar.usuario');
+
+/**
+ *  Ruta para Crear nuevo usuario
+ *
+ */
+Route::post('/create', [UserController::class, 'create'])->name('usuarios.create');

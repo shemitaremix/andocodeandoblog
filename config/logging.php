@@ -117,6 +117,18 @@ return [
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
         ],
+        'info' => [
+            'path' => storage_path('logs/info/info.log'),
+            'level'=>env('LOG_LEVEL', 'debug'),
+        ],
+        'error' => [
+            'path' => storage_path('logs/error/error.log'),
+            'level'=>env('LOG_LEVEL', 'debug'),
+        ],
+        'precaucion' => [
+            'path' => storage_path('logs/precaucion/precaucion.log'),
+            'level'=>env('LOG_LEVEL', 'debug'),
+        ],
     ],
 
 ];

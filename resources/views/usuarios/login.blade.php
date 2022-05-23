@@ -24,7 +24,7 @@
     <body>
         <div class="main">
             <div class="container a-container" id="a-container">
-                <form class="form" id="a-form" method="POST" action="">
+                <form class="form" id="a-form" method="POST" action="/create">
                     @csrf
                     <h2 class="form_title title">Crear Cuenta</h2>
                     <div class="form__icons">
