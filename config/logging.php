@@ -118,14 +118,17 @@ return [
             'path' => storage_path('logs/laravel.log'),
         ],
         'info' => [
+            'driver' => 'daily',
             'path' => storage_path('logs/info/info.log'),
             'level'=>env('LOG_LEVEL', 'debug'),
         ],
         'error' => [
+            'driver' => 'daily',
             'path' => storage_path('logs/error/error.log'),
             'level'=>env('LOG_LEVEL', 'debug'),
         ],
         'precaucion' => [
+            'driver' => 'daily',
             'path' => storage_path('logs/precaucion/precaucion.log'),
             'level'=>env('LOG_LEVEL', 'debug'),
         ],
